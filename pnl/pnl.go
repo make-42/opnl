@@ -13,6 +13,7 @@ func CalculatePNLAndValue() (float64, float64) {
 		pnl += (price - order.Price) * order.Quantity
 		pnl -= order.Fees
 		totalValue += price * order.Quantity
+		totalValue -= order.Fees
 	}
 	return pnl, totalValue
 }
@@ -41,7 +42,7 @@ func CalculatePNLQuantityAndValuePerSymbol() map[string]struct {
 		}{
 			PNL:      output[order.Symbol].PNL + (price-order.Price)*order.Quantity - order.Fees,
 			Quantity: output[order.Symbol].Quantity + order.Quantity,
-			Value:    output[order.Symbol].Value + price*order.Quantity,
+			Value:    output[order.Symbol].Value + price*order.Quantity - order.Fees,
 		}
 	}
 	return output
