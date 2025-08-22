@@ -20,7 +20,7 @@ func main() {
 			if config.Config.DisplayWithHTMLColor {
 				output += fmt.Sprintf("<span color='%s'>", config.Config.NeutralColor)
 			}
-			output += fmt.Sprintf("%.2f %s", totalValue, config.Config.UserCurrencySymbol)
+			output += fmt.Sprintf("%.2f %s", totalValue, config.Config.UserCurrencyDisplay)
 			if config.Config.DisplayWithHTMLColor {
 				output += "</span>"
 			}
@@ -38,7 +38,7 @@ func main() {
 				output += fmt.Sprintf("<span color='%s'>", config.Config.NegativeColor)
 			}
 		}
-		output += fmt.Sprintf("%s%.2f %s", sign, pnlVal, config.Config.UserCurrencySymbol)
+		output += fmt.Sprintf("%s%.2f %s", sign, pnlVal, config.Config.UserCurrencyDisplay)
 		if config.Config.DisplayWithHTMLColor {
 			output += "</span>"
 		}
@@ -63,9 +63,9 @@ func main() {
 				}
 				val := qavps[key].Value
 				if config.Config.DisplayWithHTMLColor {
-					output += fmt.Sprintf(" | <span color='%s'>%f %s %.2f %s</span> %s%s%.2f %s</span>", config.Config.NeutralColor, qavps[key].Quantity, key, val, config.Config.UserCurrencySymbol, pnlHTML, pnlSign, pnlVal, config.Config.UserCurrencySymbol)
+					output += fmt.Sprintf(" | <span color='%s'>%f %s %.2f %s</span> %s%s%.2f %s</span>", config.Config.NeutralColor, qavps[key].Quantity, key, val, config.Config.UserCurrencyDisplay, pnlHTML, pnlSign, pnlVal, config.Config.UserCurrencyDisplay)
 				} else {
-					output += fmt.Sprintf(" | %f %s %.2f %s %s%.2f %s", qavps[key].Quantity, key, val, config.Config.UserCurrencySymbol, pnlSign, pnlVal, config.Config.UserCurrencySymbol)
+					output += fmt.Sprintf(" | %f %s %.2f %s %s%.2f %s", qavps[key].Quantity, key, val, config.Config.UserCurrencyDisplay, pnlSign, pnlVal, config.Config.UserCurrencyDisplay)
 				}
 			}
 		}

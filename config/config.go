@@ -24,7 +24,8 @@ type OrderS struct {
 type ConfigS struct {
 	CoinMarketCapAPIKey        string     `yaml:"coinmarketcap_api_key"`
 	UpdateFrequency            int        `yaml:"update_frequency"` // in seconds (under 60s is useless because of CoinMarketCap API caching)
-	UserCurrencySymbol         string     `yaml:"user_currency"`
+	UserCurrencySymbol         string     `yaml:"user_currency_symbol"`
+	UserCurrencyDisplay        string     `yaml:"user_currency_display"`
 	DisplayTotalPortfolioValue bool       `yaml:"display_total_portfolio_value"`
 	DisplayPortfolio           bool       `yaml:"display_portfolio"`
 	DisplayWithHTMLColor       bool       `yaml:"display_with_html_color"`
